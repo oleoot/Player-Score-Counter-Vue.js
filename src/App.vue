@@ -4,9 +4,17 @@
     <div class="card">
       <div class="card-body text-center">
         <h3>Player 1</h3>
-        <button @click="decreaseCounter" type="button" class="btn btn-danger">Down</button>
-        <span class="player-score">{{player_1_score}}</span>
-        <button @click="increaseCounter" type="button" class="btn btn-success">Up</button>
+        <button @click="decreaseCounter(player_1)" type="button" class="btn btn-danger">Down</button>
+        <span class="player-score">{{player_1.score}}</span>
+        <button @click="increaseCounter(player_1)" type="button" class="btn btn-success">Up</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body text-center">
+        <h3>Player 2</h3>
+        <button @click="decreaseCounter(player_2)" type="button" class="btn btn-danger">Down</button>
+        <span class="player-score">{{player_2.score}}</span>
+        <button @click="increaseCounter(player_2)" type="button" class="btn btn-success">Up</button>
       </div>
     </div>
   </div>
@@ -17,15 +25,22 @@ export default {
   name: "App",
   data() {
     return {
-      player_1_score: 0,
+      player_1: {
+        score: 0,
+      },
+      player_2: {
+        score: 0,
+      },
     };
   },
   methods: {
-    increaseCounter() {
-      this.player_1_score += 1;
+    increaseCounter(player) {
+      player.score += 1;
     },
-    decreaseCounter() {
-      this.player_1_score -= 1;
+    decreaseCounter(player) {
+      if (player.score > 0) {
+        player.score -= 1;
+      }
     },
   },
 };
