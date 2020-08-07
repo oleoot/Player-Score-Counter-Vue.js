@@ -4,7 +4,7 @@
     <div class="card">
       <div class="card-body text-center">
         <h3>Player 1</h3>
-        <div class="d-flex align-items-center m-auto">
+        <div class="d-flex align-items-center m-auto card-inner">
           <button @click="decreaseCounter(player_1)" type="button" class="btn btn-danger">Down</button>
           <span class="player-score m-5">{{player_1.score}}</span>
           <button @click="increaseCounter(player_1)" type="button" class="btn btn-success">Up</button>
@@ -14,7 +14,7 @@
     <div class="card">
       <div class="card-body text-center">
         <h3>Player 2</h3>
-        <div class="d-flex align-items-center m-auto">
+        <div class="d-flex align-items-center m-auto card-inner">
           <button @click="decreaseCounter(player_2)" type="button" class="btn btn-danger">Down</button>
           <span class="player-score m-5">{{player_2.score}}</span>
           <button @click="increaseCounter(player_2)" type="button" class="btn btn-success">Up</button>
@@ -54,7 +54,7 @@ export default {
 .player-score {
   font-size: 2em;
 }
-.card-body div:first-child {
+.card-inner {
   width: fit-content;
   width: -moz-fit-content;
 }
