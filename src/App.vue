@@ -1,20 +1,24 @@
 <template>
   <div id="app" class="container">
-    <h1 class="text-center">Player Score Counter</h1>
+    <h1 class="text-center m-5">Player Score Counter</h1>
     <div class="card">
       <div class="card-body text-center">
         <h3>Player 1</h3>
-        <button @click="decreaseCounter(player_1)" type="button" class="btn btn-danger">Down</button>
-        <span class="player-score">{{player_1.score}}</span>
-        <button @click="increaseCounter(player_1)" type="button" class="btn btn-success">Up</button>
+        <div class="d-flex align-items-center m-auto">
+          <button @click="decreaseCounter(player_1)" type="button" class="btn btn-danger">Down</button>
+          <span class="player-score m-5">{{player_1.score}}</span>
+          <button @click="increaseCounter(player_1)" type="button" class="btn btn-success">Up</button>
+        </div>
       </div>
     </div>
     <div class="card">
       <div class="card-body text-center">
         <h3>Player 2</h3>
-        <button @click="decreaseCounter(player_2)" type="button" class="btn btn-danger">Down</button>
-        <span class="player-score">{{player_2.score}}</span>
-        <button @click="increaseCounter(player_2)" type="button" class="btn btn-success">Up</button>
+        <div class="d-flex align-items-center m-auto">
+          <button @click="decreaseCounter(player_2)" type="button" class="btn btn-danger">Down</button>
+          <span class="player-score m-5">{{player_2.score}}</span>
+          <button @click="increaseCounter(player_2)" type="button" class="btn btn-success">Up</button>
+        </div>
       </div>
     </div>
   </div>
@@ -49,5 +53,9 @@ export default {
 <style>
 .player-score {
   font-size: 2em;
+}
+.card-body div:first-child {
+  width: fit-content;
+  width: -moz-fit-content;
 }
 </style>
