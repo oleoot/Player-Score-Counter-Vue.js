@@ -1,28 +1,38 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="container">
+    <h1 class="text-center">Player Score Counter</h1>
+    <div class="card">
+      <div class="card-body text-center">
+        <h3>Player 1</h3>
+        <button @click="decreaseCounter" type="button" class="btn btn-danger">Down</button>
+        <span class="player-score">{{player_1_score}}</span>
+        <button @click="increaseCounter" type="button" class="btn btn-success">Up</button>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  data() {
+    return {
+      player_1_score: 0,
+    };
+  },
+  methods: {
+    increaseCounter() {
+      this.player_1_score += 1;
+    },
+    decreaseCounter() {
+      this.player_1_score -= 1;
+    },
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.player-score {
+  font-size: 2em;
 }
 </style>
